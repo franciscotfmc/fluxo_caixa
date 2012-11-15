@@ -94,7 +94,7 @@ Ext.define('EIA.controller.Usuario', {
         
         var win     	= button.up('window'),
             form    	= win.down('form').getForm(),
-            idUsuario   = form.getRecord() ? form.getRecord().get('idUsuario') : 0;
+            id   = form.getRecord() ? form.getRecord().get('id') : 0;
         
         if (form.isValid()) 
 		{
@@ -103,7 +103,7 @@ Ext.define('EIA.controller.Usuario', {
 				
             if (record)
 			{
-                if(record.data['idUsuario'])
+                if(record.data['id'])
 				{					
                     record.set(values);
                 }

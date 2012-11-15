@@ -33,7 +33,7 @@ Ext.define('EIA.store.Usuarios', {
 		extraParams : 
 		{
 			limit : 'limit', 
-			sort  : 'idUsuario',
+			sort  : 'id',
 			dir   : 'ASC',
 			total : 'total'
 		}, 
