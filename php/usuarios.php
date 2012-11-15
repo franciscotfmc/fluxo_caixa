@@ -86,10 +86,11 @@ else if($arrDados["acao"]=="delete")
 }
 else
 {
+		$sort 	= $arrDados['sort'] ? $arrDados['sort'] : '1';
         $dir 	= $arrDados['dir']  ? $arrDados['dir']  : 'ASC';
-        $order 	= $dir;
+        $order 	= $sort . ' ' . $dir;
 
-        $strSQL = "SELECT id, nome, email, senha FROM usuario";
+        $strSQL = "SELECT id, nome, email, senha FROM usuario ORDER BY ".mysql_real_escape_string($order);
 
         if($arrDados["start"] !== null && $arrDados["start"] !== 'start' && $arrDados["limit"] !== null && $arrDados["limit"] !== 'limit')
 		{
