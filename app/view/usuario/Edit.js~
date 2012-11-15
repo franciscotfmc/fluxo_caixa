@@ -24,23 +24,23 @@ Ext.define('EIA.view.usuario.Edit', {
             items	: [
 			{
                 xtype		: 'textfield',
-                name 		: 'nome',
-                ref			: 'nome',
+                name 		: 'NmUsuario',
+                ref			: 'NmUsuario',
                 fieldLabel	: 'Nome',
                 allowBlank	: false
             },
 			{
                 xtype		: 'textfield',
-                name 		: 'email',
-                ref			: 'email',
+                name 		: 'DsEmail',
+                ref			: 'DsEmail',
                 fieldLabel	: 'E-mail',
                 allowBlank	: false
             }
 			,
 			{
                 xtype		: 'textfield',
-                name 		: 'senha',
-                ref			: 'senha',
+                name 		: 'DsSenha',
+                ref			: 'DsSenha',
                 fieldLabel	: 'Senha',
                 allowBlank	: false
             }

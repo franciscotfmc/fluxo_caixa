@@ -11,15 +11,6 @@ $menu = "{
                                 leaf: true,
                                 itemMenu: 'usuarioList'
                             },
-                            {
-                                text:'Categoria',
-                                leaf:true,
-                                itemMenu: 'categoriaList'
-                            },{
-                                text:'Agenda',
-                                leaf:true,
-                                itemMenu: 'agendaList'
-                            }
                         ]
                     }
                     ,
@@ -28,9 +19,9 @@ $menu = "{
                         expanded: true,
                         children:[
                             {
-                                text:'Gráfico de Agenda',
+                                text:'Gráfico Fluxo de Caixa',
                                 leaf:true,
-                                itemMenu: 'graficoAgenda'
+                                itemMenu: ''
                             }
                         ]
                     }
