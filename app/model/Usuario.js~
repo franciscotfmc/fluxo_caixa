@@ -6,7 +6,7 @@ Ext.define('EIA.model.Usuario', {
 			type : 'int'		
 		},
 		{
-			name : 'nome',
+			name : 'name',
 			type : 'string'
 		},
 		{
@@ -14,7 +14,7 @@ Ext.define('EIA.model.Usuario', {
 			type : 'string'
 		},
 		{
-			name : 'senha',
+			name : 'password',
 			type : 'string'
 		}		
 		]

@@ -34,11 +34,11 @@ if($arrDados["acao"]=="insert")
 }
 else if($arrDados["acao"]=="update")
 {
-	$data 		= json_decode($arrDados['data']);
-	$id 	= mysql_escape_string($data->{'id'}); 
-	$name 	= mysql_escape_string($data->{'name'}); 
-	$email 	= mysql_escape_string($data->{'email'}); 
-	$password 	= mysql_escape_string($data->{'password'}); 
+	$data	= json_decode($arrDados['data']);
+	$id	= mysql_escape_string($data->{'id'}); 
+	$name	= mysql_escape_string($data->{'name'}); 
+	$email = mysql_escape_string($data->{'email'}); 
+	$password	= mysql_escape_string($data->{'password'}); 
 
 	$strSQL = "UPDATE usuario SET nome = '".$name."', email = '".$email."', password = '".$password."' WHERE id = '".$id."' ";
 
