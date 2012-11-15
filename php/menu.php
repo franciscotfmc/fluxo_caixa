@@ -11,6 +11,16 @@ $menu = "{
                                 leaf: true,
                                 itemMenu: 'usuarioList'
                             },
+                            {
+                                text:'Contas',
+                                leaf: true,
+                                itemMenu: 'contaList'
+                            },
+                            {
+                                text:'Fluxos',
+                                leaf: true,
+                                itemMenu: 'fluxoList'
+                            },
                         ]
                     }
                     ,
