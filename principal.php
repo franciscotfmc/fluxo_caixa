@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="resources/css/Ext.ux.MessageBox.css">
   
     <!-- Definição da aplicação --> 
-    <script type="text/javascript" src="extjs/ext-all.js"></script>
+    <script type="text/javascript" src="extjs/ext-all-debug.js"></script>
     <script type="text/javascript" src="app.js"></script>		
   
     <!-- Plugins --> 
