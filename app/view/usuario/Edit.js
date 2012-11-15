@@ -5,7 +5,7 @@ Ext.define('EIA.view.usuario.Edit', {
     layout		: 'fit',
     autoShow	: true,
     modal		: true,
-    initComponent: function() {    	
+    initComponent: function() {
         this.items = [{
             xtype			: 'form',
             style			: 'background-color: #fff;',
@@ -31,6 +31,7 @@ Ext.define('EIA.view.usuario.Edit', {
             },
 			{
                 xtype		: 'textfield',
+                vtype       : 'email',
                 name 		: 'email',
                 ref			: 'email',
                 fieldLabel	: 'E-mail',
@@ -39,13 +40,14 @@ Ext.define('EIA.view.usuario.Edit', {
 			,
 			{
                 xtype		: 'textfield',
+                inputType   : 'password',
                 name 		: 'senha',
                 ref			: 'senha',
                 fieldLabel	: 'Senha',
                 allowBlank	: false
             }
 			]
-			
+
 			}
         ];
 
