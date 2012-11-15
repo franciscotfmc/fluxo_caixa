@@ -68,6 +68,6 @@ Ext.define('EIA.store.Usuarios', {
 					});
 				}
 			}
-		},
+		}
 	}
 });
