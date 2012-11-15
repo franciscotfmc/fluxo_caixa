@@ -1,7 +1,7 @@
 Ext.define('EIA.store.Usuarios', {
 		extend     : 'Ext.data.Store',
 		model      : 'EIA.model.Usuario',
-		autoLoad   : false, 
+		autoLoad   : false,
 		remoteSort : false,
 		//pageSize   : 3,
 		proxy      : {
@@ -11,67 +11,63 @@ Ext.define('EIA.store.Usuarios', {
 				read    : 'php/usuarios.php?acao=list',
 				create  : 'php/usuarios.php?acao=insert',
 				update  : 'php/usuarios.php?acao=update',
-				destroy : 'php/usuarios.php?acao=delete'			
+				destroy : 'php/usuarios.php?acao=delete'
 			},
 		actionMethods : {
 				create : 'POST',
 				read   : 'POST',
 				update : 'POST',
-				destroy: 'POST' 		
+				destroy: 'POST'
 		},
 		reader : {
 			type 			: 'json',
 			root 			: 'data',
-			successProperty : 'success'		
+			successProperty : 'success'
 		},
 		writer : {
 			type 			: 'json',
 			writeAllFields  : true,
             encode          : true,
-            root            : 'data'			
+            root            : 'data'
 		},
-		extraParams : 
+		extraParams :
 		{
-			limit : 'limit', 
+			limit : 'limit',
 			sort  : 'id',
 			dir   : 'ASC',
 			total : 'total'
-		}, 
+		},
 		listeners : {
 			exception : function(proxy, response, operation)
 			{
 				Ext.MessageBox.show({
 					title   : 'Erro no proxy',
-					msg     : operation.getError(), 
+					msg     : operation.getError(),
 					icon    : Ext.MessageBox.ERROR,
-					buttons : Ext.Msg.OK 
-				
+					buttons : Ext.Msg.OK
+
 				});
-			
-			}
-		
-		},
-		listeners : {
-			write : function(proxy, operation){
+
+			},
+			write : function(proxy, operation)
+			{
 				var obj = Ext.decode(operation.response.responseText);
-				
+
 				if(obj.success)
 				{
 					Ext.ux.Msg.flash({
 						msg  : obj.message,
-						type : 'success' 
+						type : 'success'
 					});
 				}
 				else
 				{
 						Ext.ux.Msg.flash({
 						msg  : obj.message,
-						type : 'error' 
+						type : 'error'
 					});
 				}
 			}
-		
-		}
-		
-	}	
+		},
+	}
 });
