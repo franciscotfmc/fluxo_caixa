@@ -14,7 +14,7 @@ if($arrDados["acao"]=="insert")
 
 	$strSQL  = "INSERT INTO conta ";
 	$strSQL .= " (conta_id, nome, flag_tipo) ";
-	$strSQL .= "VALUES ('".$conta_id."', '".$nome."', '".flag_tipo."')";
+	$strSQL .= "VALUES ('".$conta_id."', '".$nome."', '".$flag_tipo."')";
 
 	if(mysql_query($strSQL))
 	{
