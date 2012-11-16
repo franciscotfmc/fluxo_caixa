@@ -17,8 +17,8 @@ if($arrDados["acao"]=="insert")
 
     if(mysql_query($strSQL))
     {
-
         $data->{'id'}   = mysql_insert_id();
+        $data->dt_fluxo = substr($data->dt_fluxo, 0,10);
 
         $arrMessage['success']      = true;
         $arrMessage['message']      = "Registro salvo com sucesso!";
