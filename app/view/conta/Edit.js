@@ -25,6 +25,9 @@ Ext.define('FM.view.conta.Edit', {
 			        {
                   name 		: 'flag_tipo',
                   fieldLabel	: 'Tipo',
+                  xtype       : 'numberfield',
+                  minValue    : 0,
+                  maxValue    : 1,
                 	allowBlank	: false
               }
     			]}
