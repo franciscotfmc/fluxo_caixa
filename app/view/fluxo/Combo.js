@@ -4,9 +4,9 @@ Ext.define('FM.view.fluxo.Combo', {
     name            : 'conta_id',
     fieldLabel      : 'Conta',
     store           : 'Contas',
-    displayField    : 'numero',
+    displayField    : 'nome',
     valueField      : 'id',
-    queryMode       : 'local',
+    queryMode       : 'remote',
     typeAhead       : true,
     forceSelection  : true,
     initComponent   : function() {

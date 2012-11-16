@@ -6,7 +6,7 @@ $arrMessage = array();
 if($arrDados["acao"]=="grafico")
 {
         $strSQL  = "SELECT 	  COUNT( f.id ) AS total
-							, c.numero AS conta
+							, c.nome AS conta
 						   FROM
 								conta c
 					 INNER JOIN
@@ -14,9 +14,9 @@ if($arrDados["acao"]=="grafico")
 							 ON
 								f.conta_id = c.id
                     GROUP BY
-                                c.numero
+                                c.nome
                     ORDER BY
-                                c.numero DESC
+                                c.nome DESC
 					   ";
 
 		$objRs = mysql_query($strSQL);

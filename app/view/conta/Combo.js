@@ -4,7 +4,7 @@ Ext.define('FM.view.conta.Combo', {
     name 			: 'conta_id',
     fieldLabel		: 'Conta',
     store			: 'Contas',
-    displayField	: 'numero',
+    displayField	: 'nome',
     valueField		: 'id',
     queryMode		: 'local',
     typeAhead		: true,

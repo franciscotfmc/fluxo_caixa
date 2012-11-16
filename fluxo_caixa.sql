@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 CREATE TABLE conta (
   id INT(11) NOT NULL AUTO_INCREMENT,
   conta_id INT(11) NULL,
-  numero VARCHAR(100) NOT NULL,
+  nome VARCHAR(100) NOT NULL,
   flag_tipo SMALLINT(1) UNSIGNED NOT NULL,
   PRIMARY KEY(id),
   INDEX fk_conta_conta(conta_id)

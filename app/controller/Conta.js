@@ -135,7 +135,7 @@ Ext.define('FM.controller.Conta', {
 						params	: {
 						    'id' : id,
 						    'conta_id' : values.conta_id,
-						    'numero' : values.numero,
+						    'nome' : values.nome,
 						    'flag_tipo' : values.flag_tipo,
 						},
 

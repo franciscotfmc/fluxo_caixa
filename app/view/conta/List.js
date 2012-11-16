@@ -18,7 +18,7 @@ Ext.define('FM.view.conta.List' ,{
             dataIndex	: 'conta_id',
             flex		: 1,
         },
-		{header: 'Número',  dataIndex: 'numero',  flex: 1}
+		{header: 'Nome',  dataIndex: 'nome',  flex: 1}
 		,
 		{header: 'Tipo',  dataIndex: 'flag_tipo',  flex: 1}
 

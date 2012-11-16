@@ -2,7 +2,7 @@ Ext.define('FM.store.Contas', {
     extend: 'Ext.data.Store',
     model: 'FM.model.Conta',
     remoteSort: false,
-    autoLoad: false,
+    autoLoad: true,
     pageSize: 10,
     proxy: {
         simpleSortMode: true,
@@ -31,7 +31,7 @@ Ext.define('FM.store.Contas', {
             root			: 'data'
         },
 		extraParams: {
-            sort 	: 'numero',
+            sort 	: 'id',
             dir 	: 'ASC'
 
         },

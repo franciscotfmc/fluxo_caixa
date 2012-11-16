@@ -110,7 +110,7 @@ Ext.define('FM.controller.Fluxo', {
             }
             else
             {
-                var record = Ext.create('FM.model.Fluxo');
+                record = Ext.create('FM.model.Fluxo');
                 record.set(values);
                 this.getFluxoList().store.add(record);
             }

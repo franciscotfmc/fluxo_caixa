@@ -1,5 +1,5 @@
 Ext.define('FM.model.Conta', {
-    extend		: 'Ext.data.Model',
+  extend		: 'Ext.data.Model',
 	idProperty  : 'id',
     fields: [
       {
@@ -9,7 +9,7 @@ Ext.define('FM.model.Conta', {
           name: 'conta_id'
       },
       {
-          name: 'numero',
+          name: 'nome',
           type: 'string'
       },
       {

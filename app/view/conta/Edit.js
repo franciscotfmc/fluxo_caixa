@@ -17,14 +17,14 @@ Ext.define('FM.view.conta.Edit', {
                   allowBlank: true
               },
 			        {
-                  name 		: 'numero',
-                  fieldLabel	: 'Numero',
+                  name 		: 'nome',
+                  fieldLabel	: 'Nome',
           				allowBlank	: false
               }
 			        ,
 			        {
                   name 		: 'flag_tipo',
-                  fieldLabel	: 'Flag',
+                  fieldLabel	: 'Tipo',
                 	allowBlank	: false
               }
     			]}

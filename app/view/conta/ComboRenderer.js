@@ -4,7 +4,7 @@ Ext.define('FM.view.conta.ComboRenderer', {
     name 			: 'conta_id',
     fieldLabel		: 'Conta Associada',
     store			: 'Contas',
-    displayField	: 'numero',
+    displayField	: 'nome',
     valueField		: 'id',
     queryMode		: 'local',	//Server fazer a busca por que os dados nao estao carregados
 	//local - os dados ja estão carregados
