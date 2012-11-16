@@ -34,4 +34,8 @@
     font-family: sans-serif;
 }
 
+#logout {
+  color: #04408c;
+}
+
 h1,p { font-family:arial; }
