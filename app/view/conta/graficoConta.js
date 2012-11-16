@@ -1,12 +1,12 @@
 Ext.define('EIA.view.conta.graficoConta' ,{
     extend	: 'Ext.chart.Chart',
-    alias 	: 'widget.graficoConta',   
+    alias 	: 'widget.graficoConta',
     style	: 'background:#fff',
     animate	: true,
 	theme	: 'Green',
-	//'Base', 'Green', 'Sky', 'Red', 'Purple', 'Blue', 'Yellow' 
-	//'Category1' ate 'Category6'. 
-    shadow	: true,	
+	//'Base', 'Green', 'Sky', 'Red', 'Purple', 'Blue', 'Yellow'
+	//'Category1' ate 'Category6'.
+    shadow	: true,
     store	: 'GraficoFluxoContas',
 	//legend	: false,
 	legend	: { position: 'right'},
@@ -20,15 +20,16 @@ Ext.define('EIA.view.conta.graficoConta' ,{
         title	: 'Fluxo de Contas',
         grid	: false,
         minimum	: 0
-    }, {
-        type		: 'Conta',
+    },
+    {
+        type		: 'Category',
         position	: 'left',
         fields		: ['conta'],
         title		: 'Contas'
     }],
     series: [{
         type		: 'Bar',
-		// Bar, Column, Line, Radar, Scatter  
+		// Bar, Column, Line, Radar, Scatter
 		//Area, Bar, Cartesian, Column, Gauge, Line, Pie, Radar, Scatter
         axis		: 'bottom',
         highlight	: true,
@@ -37,7 +38,7 @@ Ext.define('EIA.view.conta.graficoConta' ,{
             width	: 300,
             height	: 30,
             renderer: function(storeItem, item) {
-                this.setTitle('Qtde de ' + storeItem.get('id') + ': ' + storeItem.get('total') + ' contatos' );
+                this.setTitle(storeItem.get('total') + ' fluxos na conta ' + storeItem.get('conta') );
             }
         },
         label: {
@@ -51,9 +52,9 @@ Ext.define('EIA.view.conta.graficoConta' ,{
         xField: 'categoria',
         yField: 'total'
     }
-    ],    
+    ],
     initComponent: function(){
         this.callParent();
         this.store.load();
-    }   
+    }
 });

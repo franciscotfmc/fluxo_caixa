@@ -1,7 +1,7 @@
 Ext.define('EIA.store.GraficoFluxoContas', {
     extend		: 'Ext.data.Store',
     autoLoad	: false,
-    fields		: ['total', 'contas'],
+    fields		: ['total', 'conta'],
     remoteSort	: false,
     proxy: {
         type: 'ajax',

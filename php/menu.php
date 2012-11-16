@@ -1,6 +1,6 @@
 <?php
 
-$menu = "{ 
+$menu = "{
             children: [
                     {
                         text:'Cadastros',
@@ -31,7 +31,7 @@ $menu = "{
                             {
                                 text:'Gráfico Fluxo de Caixa',
                                 leaf:true,
-                                itemMenu: ''
+                                itemMenu: 'graficoConta'
                             }
                         ]
                     }
