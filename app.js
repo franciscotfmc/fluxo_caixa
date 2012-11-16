@@ -25,7 +25,7 @@ Ext.application({
     name: 'EIA',
     appFolder: 'app',
     controllers: [
-     'Usuario', 'Conta', 'Fluxo'
+     'Usuario', 'Conta', 'Fluxo', 'GraficoFluxoConta'
     ],
     autoCreateViewport: true,
     launch: function() {
