@@ -15,7 +15,8 @@ Ext.define('EIA.model.Fluxo', {
         },
         {
             name : 'dt_fluxo',
-            type : 'date'
+            type : 'date',
+            dateFormat:'Y-m-d'
         },
         {
             name : 'valor',
