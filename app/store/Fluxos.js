@@ -48,27 +48,28 @@ Ext.define('EIA.store.Fluxos', {
 
                 });
 
-            },
-            write : function(proxy, operation)
-            {
-                var obj = Ext.decode(operation.response.responseText);
-
-                if(obj.success)
-                {
-                    Ext.ux.Msg.flash({
-                        msg  : obj.message,
-                        type : 'success'
-                    });
-                }
-                else
-                {
-                        Ext.ux.Msg.flash({
-                        msg  : obj.message,
-                        type : 'error'
-                    });
-                }
             }
+        }
+    },
+    listeners : {
+        write : function(proxy, operation)
+        {
+            var obj = Ext.decode(operation.response.responseText);
 
+            if(obj.success)
+            {
+                Ext.ux.Msg.flash({
+                    msg  : obj.message,
+                    type : 'success'
+                });
+            }
+            else
+            {
+                    Ext.ux.Msg.flash({
+                    msg  : obj.message,
+                    type : 'error'
+                });
+            }
         }
     }
 });
