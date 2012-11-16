@@ -57,7 +57,14 @@ Ext.define('FM.view.fluxo.List' ,{
             xtype: 'datecolumn',
             format: 'd/m/Y'
         },
-        {header: 'Valor', dataIndex: 'valor', flex: 1, renderer: Ext.util.Format.numberRenderer('0.00')}
+        {
+            header: 'Valor',
+            dataIndex: 'valor',
+            flex: 1,
+            renderer: function (value) {
+                return Ext.util.Format.currency(value);
+            }
+        }
     ],
     dockedItems: [{
         xtype       : 'pagingtoolbar',
