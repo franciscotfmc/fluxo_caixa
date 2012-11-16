@@ -13,7 +13,6 @@
     <script type="text/javascript" src="app.js"></script>
 
     <!-- Plugins -->
-    <script type="text/javascript" src="app/renderer/comborenderer.js"></script>
     <script type="text/javascript" src="app/ux/Ext.ux.MessageBox.js"></script>
     <script type="text/javascript" src="app/ux/Ext.ux.Notification.js"></script>
     <script type="text/javascript" src="app/ux/Ext.ux.plugin.FormEnter.js"></script>

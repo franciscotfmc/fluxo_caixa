@@ -1,3 +1,5 @@
+Ext.require(['FM.view.conta.Combo']);
+
 Ext.define('FM.view.fluxo.Edit', {
     extend      : 'Ext.window.Window',
     alias       : 'widget.fluxoEdit',

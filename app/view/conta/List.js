@@ -1,4 +1,3 @@
-Ext.require(['FM.view.conta.ComboRenderer']);
 Ext.require(['FM.view.AbstractList']);
 
 Ext.define('FM.view.conta.List' ,{
@@ -17,6 +16,12 @@ Ext.define('FM.view.conta.List' ,{
             header		: 'Conta Associada',
             dataIndex	: 'conta_id',
             flex		: 1,
+            renderer    : function (value) {
+                var record = this.getStore().findRecord('id', value);
+                if (record !== null)
+                    return record.get('nome');
+                return '';
+            }
         },
 		{header: 'Nome',  dataIndex: 'nome',  flex: 1}
 		,

@@ -40,7 +40,14 @@ Ext.define('FM.view.fluxo.List' ,{
         {
             header: 'Conta',
             dataIndex: 'conta_id',
-            flex: 1
+            flex: 1,
+            renderer: function(value) {
+                var contasStore = Ext.getStore('Contas');
+                var record = contasStore.findRecord('id', value);
+                if (record !== null)
+                    return record.get('nome');
+                return '';
+            }
         },
         {header: 'Descrição', dataIndex: 'descricao', flex: 1},
         {
