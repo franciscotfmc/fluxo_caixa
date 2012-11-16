@@ -2,9 +2,8 @@ Ext.define('EIA.store.Contas', {
     extend: 'Ext.data.Store',
     model: 'EIA.model.Conta',
     remoteSort: false,
-	autoLoad: false,
+    autoLoad: false,
     pageSize: 10,
-   autoLoad: {start: 0, limit: 10},
     proxy: {
         simpleSortMode: true,
         type: 'ajax',
