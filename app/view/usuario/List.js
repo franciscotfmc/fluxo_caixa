@@ -39,7 +39,6 @@ Ext.define('FM.view.usuario.List' ,{
         {header: 'Código'	,  dataIndex: 'id'	,  flex: 1},
         {header: 'Nome'		,  dataIndex: 'nome'	,  flex: 1},
         {header: 'E-mail'	,  dataIndex: 'email'		,  flex: 1},
-        {header: 'Senha'	,  dataIndex: 'senha'		,  flex: 1}
     ],
     dockedItems: [{
         xtype		: 'pagingtoolbar',
