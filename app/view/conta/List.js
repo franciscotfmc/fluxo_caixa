@@ -25,7 +25,18 @@ Ext.define('FM.view.conta.List' ,{
         },
 		{header: 'Nome',  dataIndex: 'nome',  flex: 1}
 		,
-		{header: 'Tipo',  dataIndex: 'flag_tipo',  flex: 1}
+		{
+            header: 'Tipo',
+            dataIndex: 'flag_tipo',
+            flex: 1,
+            renderer: function (value) {
+                if (value === '0')
+                    return 'Entrada';
+                if (value === '1')
+                    return 'Saída';
+                return '';
+            }
+        }
 
 		];
 
