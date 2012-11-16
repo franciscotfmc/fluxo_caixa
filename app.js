@@ -22,13 +22,13 @@ Ext.require([
 Ext.require(['Ext.Window', 'Ext.layout.container.Fit', 'Ext.fx.target.Sprite']);
 
 Ext.application({
-    name: 'EIA',
+    name: 'FM',
     appFolder: 'app',
     controllers: [
      'Usuario', 'Conta', 'Fluxo', 'GraficoFluxoConta'
     ],
     autoCreateViewport: true,
     launch: function() {
-        EIA.app = this;
+        FM.app = this;
     }
 });

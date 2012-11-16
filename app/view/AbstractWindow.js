@@ -1,12 +1,12 @@
-Ext.define('EIA.view.AbstractWindow',{
+Ext.define('FM.view.AbstractWindow',{
     extend: 'Ext.window.Window',
     alias: 'widget.abstractwindow',
     title: 'Edição',
     layout: 'fit',
     autoShow: true,
-    modal: true,    
+    modal: true,
     initComponent: function(){
-        
+
         this.buttons = [{
             text: 'Salvar',
             action: 'save',
@@ -17,7 +17,7 @@ Ext.define('EIA.view.AbstractWindow',{
             scope: this,
             iconCls: 'cancel',
             handler: this.close
-        }];        
+        }];
         this.callParent(arguments);
     }
 });

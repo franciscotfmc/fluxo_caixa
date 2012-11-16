@@ -1,4 +1,4 @@
-Ext.define('EIA.store.GraficoFluxoContas', {
+Ext.define('FM.store.GraficoFluxoContas', {
     extend		: 'Ext.data.Store',
     autoLoad	: false,
     fields		: ['total', 'conta'],

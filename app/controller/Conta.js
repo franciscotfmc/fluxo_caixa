@@ -1,22 +1,22 @@
 Ext.require('Ext.window.MessageBox');
-Ext.define('EIA.controller.Conta', {
+Ext.define('FM.controller.Conta', {
     extend: 'Ext.app.Controller',
     stores: ['Contas'],
-    models: ['Conta'], 
-	
+    models: ['Conta'],
+
     views: [
         'conta.Edit',
-        'conta.List'    
+        'conta.List'
     ],
-    
+
     refs: [
         {
-            ref:'contaEdit', 
+            ref:'contaEdit',
             selector:'contaEdit'
         },
-        
+
         {
-            ref:'contaList', 
+            ref:'contaList',
             selector:'contaList'
         }
     ],
@@ -30,7 +30,7 @@ Ext.define('EIA.controller.Conta', {
         'contaList button[action=insert]': {
             click: this.insert
         },
-        
+
         'contaList button[action=edit]': {
             click: this.edit
         },
@@ -38,7 +38,7 @@ Ext.define('EIA.controller.Conta', {
         'contaList button[action=destroy]': {
             click: this.delete
         },
-        
+
         'contaList button[action=refresh]': {
             click: this.refresh
         },
@@ -48,25 +48,25 @@ Ext.define('EIA.controller.Conta', {
         }
     });
     },
-    
+
     refresh: function(){
         this.getContaList().store.load();
     },
-    
+
     insert: function(btn, evt, opt) {
         var view = Ext.widget('contaEdit');
         view.setTitle('Nova Conta');
     },
-    
+
     delete: function() {
-        
+
         var grid = this.getContaList(), records = grid.getSelectionModel().getSelection();
 
         if(records.length === 0){
             Ext.Msg.alert('Atenção', 'Nenhum registro selecionado');
             return false;
         } else {
-        
+
             Ext.Msg.show({
                 title : 'Confirmação',
                 msg : 'Tem certeza que deseja deletar o(s) registro(s) selecionado(s)?',
@@ -75,8 +75,8 @@ Ext.define('EIA.controller.Conta', {
                 scope : this,
                 width : 450,
                 fn : function(btn, ev){
-                    if (btn == 'yes') 
-					{						                        
+                    if (btn == 'yes')
+					{
 			            // array para armazenar o(s) id(s) dos registros a serem excluídos
 			            var idSel = [];
 
@@ -85,28 +85,28 @@ Ext.define('EIA.controller.Conta', {
 			            {
 				            idSel.push(records[i].data.id);
 			            }
-				
+
 			            // faz a requisição da exclusão
 			            Ext.Ajax.request ({
 				            scope	: this,
 				            url		: 'php/contas.php?acao=delete', //arquivo que contém o método a utilizar
 				            params	: {
-							            'id[]'	: idSel //manda o array idSel para o método excluir o registro 
+							            'id[]'	: idSel //manda o array idSel para o método excluir o registro
 						              },
 				            success: function(r){ // se a exclusão foi executada com sucesso
 					            //Se tudo OK, pegamos a resposta que é um JSON e decodificamos para um objeto
 					            var obj = Ext.decode(r.responseText);
 					            //Verificamos se obtivemos sucesso na ação
-					            if(obj.success){						
+					            if(obj.success){
 						            Ext.Msg.alert('Sucesso', obj.message);
 						            this.getContaList().store.loadPage(1);
-                	            //this.getAgendaList().store.load(); // atualiza informações dogrid												 
+                	            //this.getAgendaList().store.load(); // atualiza informações dogrid
 					            }
 					            else{
 						            Ext.Msg.alert('Erro', obj.message); //exibe a mensagem
 					            }
 				            },
-				            failure: function(){ // se houve algum erro ao submeter o formulário 					
+				            failure: function(){ // se houve algum erro ao submeter o formulário
 					            Ext.Msg.alert('Erro', 'Erro na comunicação com o servidor.'); //exibe a mensagem
 				            }
 			            });
@@ -116,19 +116,19 @@ Ext.define('EIA.controller.Conta', {
         }
     },
 
-    save: function(button) {	
-        
+    save: function(button) {
+
         var win     	= button.up('window'),
             form    	= win.down('form').getForm(),
             id	= form.getRecord() ? form.getRecord().get('id') : 0;
-			
+
         if (form.isValid()) {
             var record = form.getRecord(),
                 values = form.getValues();
             if (record)
-			{												
+			{
                 if(record.data['id'])
-				{						
+				{
 					Ext.Ajax.request ({
 						scope	: this,
 						url		: 'php/contas.php?acao=update', //arquivo que contém o método a utilizar
@@ -139,55 +139,55 @@ Ext.define('EIA.controller.Conta', {
 						    'flag_tipo' : values.flag_tipo,
 						},
 
-						success: function(r){ 
+						success: function(r){
 
 							//Se tudo OK, pegamos a resposta que é um JSON e decodificamos para um objeto
 							var obj = Ext.decode(r.responseText);
 							//Verificamos se obtivemos sucesso na ação
 							if(obj.success)
 							{
-								Ext.Msg.alert('Sucesso', obj.message);								
+								Ext.Msg.alert('Sucesso', obj.message);
 							}
 							else
 							{
-								Ext.Msg.alert('Erro', obj.message); //exibe a mensagem								
+								Ext.Msg.alert('Erro', obj.message); //exibe a mensagem
 							}
 						},
 
-						failure: function(){ // se houve algum erro ao submeter o formulário 					
+						failure: function(){ // se houve algum erro ao submeter o formulário
 								Ext.Msg.alert('Erro', 'Erro na comunicação com o servidor.'); //exibe a mensagem
 						}
-					});																								
+					});
                 }
-            } 
+            }
 			else
 			{
-                var record = Ext.create('EIA.model.Conta');
+                var record = Ext.create('FM.model.Conta');
                 record.set(values);
                 this.getContaList().store.add(record);
-				this.getContaList().store.sync();				
+				this.getContaList().store.sync();
             }
-			
-            win.close();            
+
+            win.close();
 			this.getContaList().store.load();
         }else{
             Ext.ux.Msg.flash({
                 msg: 'Há campos preenchidos incorretamente',
                 type: 'error'
             });
-            
+
         }
     },
-    
+
     edit: function() {
-        var records = this.getContaList().getSelectionModel().getSelection();    	    	
+        var records = this.getContaList().getSelectionModel().getSelection();
         if(records.length === 1) {
-            var editWind = Ext.widget('contaEdit');    	
+            var editWind = Ext.widget('contaEdit');
             var editForm = editWind.down('form');
             var record = records[0];
             editForm.loadRecord(record);
         } else {
             return;
-        }		
+        }
     }
 });

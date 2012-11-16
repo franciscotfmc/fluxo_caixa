@@ -1,6 +1,6 @@
 Ext.require('Ext.window.MessageBox');
 
-Ext.define('EIA.controller.Fluxo', {
+Ext.define('FM.controller.Fluxo', {
     extend  : 'Ext.app.Controller',
     stores  : ['Fluxos'],
     models  : ['Fluxo'],
@@ -110,7 +110,7 @@ Ext.define('EIA.controller.Fluxo', {
             }
             else
             {
-                var record = Ext.create('EIA.model.Fluxo');
+                var record = Ext.create('FM.model.Fluxo');
                 record.set(values);
                 this.getFluxoList().store.add(record);
             }

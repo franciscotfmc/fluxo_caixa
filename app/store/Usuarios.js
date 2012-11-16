@@ -1,6 +1,6 @@
-Ext.define('EIA.store.Usuarios', {
+Ext.define('FM.store.Usuarios', {
 		extend     : 'Ext.data.Store',
-		model      : 'EIA.model.Usuario',
+		model      : 'FM.model.Usuario',
 		autoLoad   : false,
 		remoteSort : false,
 		//pageSize   : 3,

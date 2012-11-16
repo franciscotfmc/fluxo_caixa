@@ -1,4 +1,4 @@
-Ext.define('EIA.view.usuario.Edit', {
+Ext.define('FM.view.usuario.Edit', {
     extend		: 'Ext.window.Window',
     alias 		: 'widget.usuarioEdit',
     title 		: 'Edição de usuários',

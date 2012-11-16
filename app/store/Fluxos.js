@@ -1,6 +1,6 @@
-Ext.define('EIA.store.Fluxos', {
+Ext.define('FM.store.Fluxos', {
         extend     : 'Ext.data.Store',
-        model      : 'EIA.model.Fluxo',
+        model      : 'FM.model.Fluxo',
         autoLoad   : false,
         remoteSort : false,
         //pageSize   : 3,

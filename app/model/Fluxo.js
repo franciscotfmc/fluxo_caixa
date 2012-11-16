@@ -1,4 +1,4 @@
-Ext.define('EIA.model.Fluxo', {
+Ext.define('FM.model.Fluxo', {
         extend      : 'Ext.data.Model',
         idProperty  : 'id',
         fields :[{

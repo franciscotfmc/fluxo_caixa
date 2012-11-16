@@ -1,6 +1,6 @@
-Ext.define('EIA.view.Viewport', {
+Ext.define('FM.view.Viewport', {
     extend: 'Ext.container.Viewport',
-    title: 'Sistema de Agenda EIA 1.0',
+    title: 'Sistema de Agenda FM 1.0',
     layout: 'border',
     itemId: 'viewPortPrincipal',
     items: [
@@ -8,7 +8,7 @@ Ext.define('EIA.view.Viewport', {
         xtype: 'box',
         id: 'header',
         region: 'north',
-        html: '<h1>Sistema Agenda - EIA 1.0</h1>',
+        html: '<h1>Sistema Agenda - FM 1.0</h1>',
         height: 45
     }
     ,{
@@ -31,13 +31,13 @@ Ext.define('EIA.view.Viewport', {
             xtype: 'toolbar',
             items: [{
                 text: 'Expandir todos',
-                iconCls: 'expand', 
+                iconCls: 'expand',
                 handler: function(){
                     this.up('#treePanelPrincipal').expandAll();
                 }
             }, {
                 text: 'Contrair todos',
-                iconCls: 'collapse', 
+                iconCls: 'collapse',
                 handler: function(){
                     this.up('#treePanelPrincipal').collapseAll();
                 }
@@ -46,11 +46,11 @@ Ext.define('EIA.view.Viewport', {
         listeners: {
             itemclick: function(view, record, item, index, evt, options) {
                 if (record.get('leaf')) {
-                                       
+
                     var abaAberta = this.ownerCt.down('#tabCenter').items.findBy(function( aba ){
                         return aba.title === record.get('text');
                     });
-                    
+
                     if(!abaAberta){
                         this.ownerCt.down('#tabCenter').add({
                             title: record.get('text') || 'Tela do sistema',
@@ -64,7 +64,7 @@ Ext.define('EIA.view.Viewport', {
                     }else{
                         this.ownerCt.down('#tabCenter').setActiveTab(abaAberta);
                     }
-                    
+
                 }
             }
         },
@@ -81,11 +81,11 @@ Ext.define('EIA.view.Viewport', {
     }
     ,{
         xtype: 'tabpanel',
-        region: 'center', 
+        region: 'center',
         margins: '0 5 5 0',
         border: false,
         itemId: 'tabCenter'
     }
     ]
-    
+
 });

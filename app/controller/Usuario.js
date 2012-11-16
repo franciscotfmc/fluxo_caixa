@@ -1,24 +1,24 @@
 Ext.require('Ext.window.MessageBox');
 
-Ext.define('EIA.controller.Usuario', {
+Ext.define('FM.controller.Usuario', {
     extend	: 'Ext.app.Controller',
     stores	: ['Usuarios'],
-    models	: ['Usuario'], 	
+    models	: ['Usuario'],
     views	: [
 			'usuario.List',
 			'usuario.Edit'
-			],    
+			],
     refs: [
     {
-        ref			: 'usuarioEdit', 
+        ref			: 'usuarioEdit',
         selector	: 'usuarioEdit'
     },
     {
-        ref			: 'usuarioList', 
+        ref			: 'usuarioList',
         selector	: 'usuarioList'
     }
     ],
-    init	: function() 
+    init	: function()
 	{
         this.control({
             'usuarioList': {
@@ -28,7 +28,7 @@ Ext.define('EIA.controller.Usuario', {
             'usuarioList button[action=insert]': {
                 click: this.insert
             },
-            
+
             'usuarioList button[action=edit]': {
                 click: this.edit
             },
@@ -36,7 +36,7 @@ Ext.define('EIA.controller.Usuario', {
             'usuarioList button[action=destroy]': {
                 click: this.destroy
             },
-            
+
             'usuarioList button[action=refresh]': {
                 click: this.refresh
             },
@@ -46,18 +46,18 @@ Ext.define('EIA.controller.Usuario', {
             }
         });
     },
-    
+
     refresh: function(){
         this.getUsuarioList().store.load();
     },
-    
+
     insert: function(btn, evt, opt) {
         var view = Ext.widget('usuarioEdit');
         view.setTitle('Novo usuário');
     },
-    
+
     destroy: function() {
-        
+
         var grid    = this.getUsuarioList(),
             records = grid.getSelectionModel().getSelection();
 
@@ -77,12 +77,12 @@ Ext.define('EIA.controller.Usuario', {
                 width 	: 450,
                 fn 		: function(btn, ev)
 						{
-							if (btn == 'yes') 
-							{						
+							if (btn == 'yes')
+							{
 								var store = this.getUsuarioList().store;
 								//Em cache - action destroy (records)
 								store.remove(records);
-								//Linha envia o seu store banco 
+								//Linha envia o seu store banco
 								this.getUsuarioList().store.sync();
 							}
 						}
@@ -90,27 +90,27 @@ Ext.define('EIA.controller.Usuario', {
         }
     },
 
-    save: function(button) {	
-        
+    save: function(button) {
+
         var win     	= button.up('window'),
             form    	= win.down('form').getForm(),
             id   = form.getRecord() ? form.getRecord().get('id') : 0;
-        
-        if (form.isValid()) 
+
+        if (form.isValid())
 		{
             var record 	= form.getRecord(),
                 values 	= form.getValues();
-				
+
             if (record)
 			{
                 if(record.data['id'])
-				{					
+				{
                     record.set(values);
                 }
-            } 
+            }
 			else
 			{
-                var record = Ext.create('EIA.model.Usuario');
+                var record = Ext.create('FM.model.Usuario');
                 record.set(values);
                 this.getUsuarioList().store.add(record);
             }
@@ -124,24 +124,24 @@ Ext.define('EIA.controller.Usuario', {
                 msg: 'Há campos preenchidos incorretamente',
                 type: 'error'
         });
-            
+
         }
-        
+
     },
-    
+
     edit: function(){
-        
-        var records = this.getUsuarioList().getSelectionModel().getSelection();    	
-    	
+
+        var records = this.getUsuarioList().getSelectionModel().getSelection();
+
         if(records.length === 1)
 		{
-            var editWind = Ext.widget('usuarioEdit');    	
+            var editWind = Ext.widget('usuarioEdit');
             var editForm = editWind.down('form');
             var record = records[0];
             editForm.loadRecord(record);
         }else{
             return;
-        }		
+        }
     }
 
 });

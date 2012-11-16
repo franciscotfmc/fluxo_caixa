@@ -1,14 +1,14 @@
-Ext.require(['EIA.view.AbstractForm']);
-Ext.require(['EIA.view.AbstractWindow']);
-Ext.require(['EIA.view.conta.Combo']);
+Ext.require(['FM.view.AbstractForm']);
+Ext.require(['FM.view.AbstractWindow']);
+Ext.require(['FM.view.conta.Combo']);
 
-Ext.define('EIA.view.conta.Edit', {
-    extend: 'EIA.view.AbstractWindow',
+Ext.define('FM.view.conta.Edit', {
+    extend: 'FM.view.AbstractWindow',
     alias : 'widget.contaEdit',
     title : 'Edição de Conta',
 
     initComponent: function() {
-    	
+
         this.items = [{
             xtype: 'abstractform',
             items: [
@@ -19,14 +19,14 @@ Ext.define('EIA.view.conta.Edit', {
 			        {
                   name 		: 'numero',
                   fieldLabel	: 'Numero',
-          				allowBlank	: false				
+          				allowBlank	: false
               }
 			        ,
 			        {
                   name 		: 'flag_tipo',
                   fieldLabel	: 'Flag',
-                	allowBlank	: false				
-              }			
+                	allowBlank	: false
+              }
     			]}
         ];
         this.callParent(arguments);

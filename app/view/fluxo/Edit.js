@@ -1,4 +1,4 @@
-Ext.define('EIA.view.fluxo.Edit', {
+Ext.define('FM.view.fluxo.Edit', {
     extend      : 'Ext.window.Window',
     alias       : 'widget.fluxoEdit',
     title       : 'Edição de fluxo',

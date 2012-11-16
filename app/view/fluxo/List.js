@@ -1,4 +1,4 @@
-Ext.define('EIA.view.fluxo.List' ,{
+Ext.define('FM.view.fluxo.List' ,{
     extend  : 'Ext.grid.Panel',
     alias   : 'widget.fluxoList',
     store   : 'Fluxos',

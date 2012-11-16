@@ -1,4 +1,4 @@
-Ext.define('EIA.view.fluxo.Combo', {
+Ext.define('FM.view.fluxo.Combo', {
     extend          : 'Ext.form.field.ComboBox',
     alias           : 'widget.contaCombo',
     name            : 'conta_id',

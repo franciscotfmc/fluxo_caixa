@@ -1,4 +1,4 @@
-Ext.define('EIA.view.AbstractForm',{
+Ext.define('FM.view.AbstractForm',{
     extend		: 'Ext.form.Panel',
     alias		: 'widget.abstractform',
     padding		: '5 5 0 5',

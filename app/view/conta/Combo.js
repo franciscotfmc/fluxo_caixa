@@ -1,4 +1,4 @@
-Ext.define('EIA.view.conta.Combo', {
+Ext.define('FM.view.conta.Combo', {
     extend			: 'Ext.form.field.ComboBox',
     alias			: 'widget.contaCombo',
     name 			: 'conta_id',

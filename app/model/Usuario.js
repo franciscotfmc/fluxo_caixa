@@ -1,9 +1,9 @@
-Ext.define('EIA.model.Usuario', {
+Ext.define('FM.model.Usuario', {
 		extend		: 'Ext.data.Model',
-		idProperty  : 'id',				
+		idProperty  : 'id',
 		fields :[{
 			name : 'id',
-			type : 'int'		
+			type : 'int'
 		},
 		{
 			name : 'nome',
@@ -16,6 +16,6 @@ Ext.define('EIA.model.Usuario', {
 		{
 			name : 'senha',
 			type : 'string'
-		}		
+		}
 		]
-}); 
+});

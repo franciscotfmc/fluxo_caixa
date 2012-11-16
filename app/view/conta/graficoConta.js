@@ -1,4 +1,4 @@
-Ext.define('EIA.view.conta.graficoConta' ,{
+Ext.define('FM.view.conta.graficoConta' ,{
     extend	: 'Ext.chart.Chart',
     alias 	: 'widget.graficoConta',
     style	: 'background:#fff',

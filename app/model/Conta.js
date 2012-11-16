@@ -1,17 +1,17 @@
-Ext.define('EIA.model.Conta', {
+Ext.define('FM.model.Conta', {
     extend		: 'Ext.data.Model',
-	idProperty  : 'id',	
+	idProperty  : 'id',
     fields: [
       {
           name: 'id'
       },
 	    {
           name: 'conta_id'
-      },	
+      },
       {
           name: 'numero',
           type: 'string'
-      },	
+      },
       {
           name: 'flag_tipo',
       }

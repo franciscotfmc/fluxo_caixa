@@ -1,6 +1,6 @@
-Ext.define('EIA.store.Contas', {
+Ext.define('FM.store.Contas', {
     extend: 'Ext.data.Store',
-    model: 'EIA.model.Conta',
+    model: 'FM.model.Conta',
     remoteSort: false,
     autoLoad: false,
     pageSize: 10,

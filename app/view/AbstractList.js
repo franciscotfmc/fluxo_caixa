@@ -1,10 +1,10 @@
-Ext.define('EIA.view.AbstractList',{
+Ext.define('FM.view.AbstractList',{
     extend			: 'Ext.grid.Panel',
     alias			: 'widget.abstractlist',
     title			: 'Listagem',
-    columnLines		: true,	
+    columnLines		: true,
     frame			: true,
-    initComponent	: function(){        
+    initComponent	: function(){
         this.tbar = [
             {
                 text: 'Novo registro',
@@ -33,18 +33,18 @@ Ext.define('EIA.view.AbstractList',{
                 itemId: 'refresh'
             }
         ];
-        
+
         this.callParent(arguments);
         this.getSelectionModel().on('selectionchange', this.onSelectChange, this);
     },
-        
+
     onRender: function(){
         this.store.load();
         this.callParent(arguments);
     },
-    
+
     onSelectChange: function(selModel, selections){
         this.down('#delete').setDisabled(selections.length === 0);
         this.down('#edit').setDisabled(selections.length !== 1);
-    }   
+    }
 });
