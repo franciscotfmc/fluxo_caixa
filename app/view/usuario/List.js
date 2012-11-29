@@ -22,6 +22,5 @@ Ext.define('FM.view.usuario.List' ,{
     initComponent: function(){
         this.callParent();
         this.getSelectionModel().on('selectionchange', this.onSelectChange, this);
-    },
-
+    }
 });

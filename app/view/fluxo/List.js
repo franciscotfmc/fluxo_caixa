@@ -48,5 +48,5 @@ Ext.define('FM.view.fluxo.List' ,{
     initComponent: function(){
         this.callParent();
         this.getSelectionModel().on('selectionchange', this.onSelectChange, this);
-    },
+    }
 });
