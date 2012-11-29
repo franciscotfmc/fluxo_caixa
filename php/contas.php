@@ -34,14 +34,15 @@ if($arrDados["acao"]=="insert")
 }
 else if($arrDados["acao"]=="update")
 {
-	$id 		= mysql_escape_string($arrDados['id']);
-	$conta_id	= mysql_escape_string($arrDados['conta_id']);
-	$nome 		= mysql_escape_string($arrDados['nome']);
-	$flag_tipo	= mysql_escape_string($arrDados['flag_tipo']);
+    $data       = json_decode($arrDados['data']);
+	$id 		= mysql_escape_string($data->{'id'});
+	$conta_id	= mysql_escape_string($data->{'conta_id'});
+	$nome 		= mysql_escape_string($data->{'nome'});
+	$flag_tipo	= mysql_escape_string($data->{'flag_tipo'});
 
 	$strSQL  = "UPDATE conta SET ";
 	$strSQL .= "  nome 				= '".$nome."' ";
-	$strSQL .= ", conta_id 	= '".$conta_id."'";
+	$strSQL .= ", conta_id 	= ".$conta_id;
 	$strSQL .= ", flag_tipo 				= '".$flag_tipo."'";
 	$strSQL .= " WHERE id 			= '".$id."' ";
 
