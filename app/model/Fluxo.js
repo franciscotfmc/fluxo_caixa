@@ -16,7 +16,7 @@ Ext.define('FM.model.Fluxo', {
         {
             name : 'dt_fluxo',
             type : 'date',
-            dateFormat:'Y-m-d'
+            dateFormat:'c'
         },
         {
             name : 'valor',
